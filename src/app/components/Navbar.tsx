@@ -7,8 +7,8 @@ function Navbar() {
   const [open,setOpen]= useState(false)
   return (
     <React.Fragment>
-      <header className="border-b border-gray-300 py-2">
-       <div className='flex justify-between items-center xl:max-w-7xl xl:mx-auto max-w-full px-[8%] flex-wrap w-full'>
+      <header className="border-b border-gray-300 py-2 shadow-2xl lg:m-10 lg:rounded-md">
+       <div className='flex justify-between items-center xl:max-w-7xl xl:mx-auto max-w-full px-[8%] flex-wrap w-full '>
         <h1 className=' font-bold'>
           <Link href={'/'}>
            EsportsCafe
