@@ -1,17 +1,21 @@
 import Image from 'next/image'
-
+import Navbar from './components/Navbar';
  export default async function Home({data}:any) {
   const posts = await getPosts();
   console.log(posts)
       return (
-      <div>
-        {posts?.map((post:any)=>{
-          return(
-          
-          <h1>{post.postTitle}</h1>
-            );  
-          })}
-      </div>
+        <>
+         
+            <div>
+            {posts?.map((post:any)=>{
+              return(
+              
+              <h1>{post.postTitle}</h1>
+                );  
+              })}
+          </div>
+        </>
+      
       )
 }
 async function getPosts() {
