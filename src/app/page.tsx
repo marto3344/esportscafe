@@ -20,10 +20,12 @@ import Link from 'next/link';
                   {posts?.map((post:any)=>{
                     return(
                       <>
-                        <div className=' rounded-md shadow-2xl lg:m-10 p-10'>
-                           <Link href={`/posts/${post.postLink}`}><p className=' font-bold'>{post.postTitle}</p></Link>
-                           <p>{post.postText.text} </p>
-                        </div>
+                      <Link href={`/posts/${post.postLink}`}>
+                       <span className=' rounded-md shadow-2xl lg:m-10 p-10 block'>
+                           <p className=' font-bold hover:underline'>{post.postTitle}</p>
+                           <p className='hover:underline'>{post.postText.text} </p>
+                        </span>
+                      </Link>                       
                       </>                
                       );  
                     })}
@@ -53,16 +55,19 @@ async function getPosts() {
             raw
             markdown
             html
+            json
           }
           author {
             ... on Author {
               authorName
               authorUrl
             }
-         
           }
-             postTitle
+          postTitle
+          id
+          postImage {
             id
+          }
         }
       }`,
   }),
